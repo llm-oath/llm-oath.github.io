@@ -180,13 +180,36 @@
         height: calc(100% + 80px);
         background: rgba(173, 216, 230, 0.7);
         z-index: 0;
-      ">
-      </div>
+      "></div>
 
       <!-- Video -->
-      <video id="teaser" autoplay muted loop playsinline style="width: 100%; height: auto; display: block; position: relative; z-index: 1;">
+      <video
+        id="teaser"
+        autoplay
+        loop
+        playsinline
+        style="width: 100%; height: auto; display: block; position: relative; z-index: 1; cursor: pointer;"
+      >
         <source src="./static/videos/OATH_Overview.mp4" type="video/mp4">
       </video>
+
+      <!-- Play/Pause Icon -->
+      <div
+        id="playPauseIcon"
+        style="
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 64px;
+          color: white;
+          text-shadow: 0 0 10px rgba(0,0,0,0.7);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          pointer-events: none;
+          z-index: 2;
+        "
+      >⏸️</div>
 
       <!-- Custom slider -->
       <input
@@ -203,18 +226,40 @@
           transform: translateX(-50%);
           width: 80%;
           cursor: pointer;
+          z-index: 2;
         "
       >
-      <h2 class="subtitle has-text-centered">
-        <strong>Overview videos:</strong> OATH advances MATP by introducing a novel obstacle-aware strategy for task assignment.
-      </h2>
     </div>
+    <h2 class="subtitle has-text-centered">
+      <strong>Overview videos:</strong> OATH advances MATP by introducing a novel obstacle-aware strategy for task assignment.
+    </h2>
   </div>
 </section>
 
 <script>
   const video = document.getElementById('teaser');
   const slider = document.getElementById('video-slider');
+  const icon = document.getElementById('playPauseIcon');
+
+  // Allow sound
+  video.muted = false;
+
+  // Toggle play/pause on click
+  video.addEventListener('click', () => {
+    if (video.paused) {
+      video.play();
+      icon.textContent = '⏸️';
+    } else {
+      video.pause();
+      icon.textContent = '▶️';
+    }
+
+    // Show icon briefly
+    icon.style.opacity = 1;
+    setTimeout(() => {
+      icon.style.opacity = 0;
+    }, 800);
+  });
 
   // Update slider as video plays
   video.addEventListener('timeupdate', () => {
@@ -405,7 +450,7 @@
         <h3 class="title is-4">Visualisation</h3>
         <div class="content has-text-justified">
           <p>
-            Simulation with two ground robots and two drones.
+            Simulation with two ground robots and two drones in Isaac Sim, where the ground robots and handle both red and blue tasks while the drones only handle blue tasks.
           </p>
         </div>
         <div class="container is-max-desktop">
@@ -470,7 +515,7 @@
         <div class="container is-max-desktop">
           <div class="hero-body">
             <video id="teaser" autoplay muted loop playsinline height="100%">
-              <source src="./static/videos/AddTask_LLM.mp4"
+              <source src="./static/videos/LLM-Tasks.mp4"
                       type="video/mp4">
             </video>
             <!-- <h2 class="subtitle has-text-centered">
@@ -488,7 +533,7 @@
         <div class="container is-max-desktop">
           <div class="hero-body">
             <video id="teaser" autoplay muted loop playsinline height="100%">
-              <source src="./static/videos/LLM-wall.mp4"
+              <source src="./static/videos/LLM-obstacle.mp4"
                       type="video/mp4">
             </video>
             <!-- <h2 class="subtitle has-text-centered">
@@ -497,6 +542,24 @@
           </div>
         </div>
         <!--/ Re-rendering. -->
+
+        <div class="content has-text-justified">
+          <p>
+            - Case 3: Change Task Priority
+          </p>
+        </div>
+        <div class="container is-max-desktop">
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+            <video id="teaser" autoplay muted loop playsinline height="100%">
+              <source src="./static/videos/LLM-priority.mp4"
+                      type="video/mp4">
+            </video>
+            <!-- <h2 class="subtitle has-text-centered">
+              Add Obstacles.
+            </h2> -->
+          </div>
+        </div>
 
       </div>
     </div>
