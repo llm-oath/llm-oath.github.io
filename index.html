@@ -171,27 +171,22 @@
 <section class="hero teaser" style="position: relative; overflow: hidden;">
   <div class="container is-max-desktop" style="position: relative;">
     <div class="hero-body" style="position: relative; padding: 0;">
-      <!-- Video -->
-      <video id="teaser" autoplay muted loop playsinline style="width: 100%; height: auto; display: block;">
-        <source src="./static/videos/OATH_Overview.mp4" type="video/mp4">
-      </video>
-
       <!-- Light blue background overlay -->
       <div style="
         position: absolute;
-        top: 0;
+        top: -40px;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: calc(100% + 80px);
         background: rgba(173, 216, 230, 0.7);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        z-index: 0;
       ">
-        <h2 class="subtitle has-text-centered" style="color: #003366; padding: 20px; font-size: 1.5rem;">
-          <strong>Overview videos:</strong> OATH advances MATP by introducing a novel obstacle-aware strategy for task assignment.
-        </h2>
       </div>
+
+      <!-- Video -->
+      <video id="teaser" autoplay muted loop playsinline style="width: 100%; height: auto; display: block; position: relative; z-index: 1;">
+        <source src="./static/videos/OATH_Overview.mp4" type="video/mp4">
+      </video>
 
       <!-- Custom slider -->
       <input
@@ -210,6 +205,9 @@
           cursor: pointer;
         "
       >
+      <h2 class="subtitle has-text-centered">
+        <strong>Overview videos:</strong> OATH advances MATP by introducing a novel obstacle-aware strategy for task assignment.
+      </h2>
     </div>
   </div>
 </section>
@@ -382,7 +380,7 @@
     <!-- </div> -->
     <!--/ Matting. -->
 
-    <!-- Animation. -->
+
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Obstacle-Aware Multi-Agent Pickup and Delivery</h2>
@@ -391,7 +389,8 @@
         <h3 class="title is-4">Results</h3>
         <div class="content has-text-justified">
           <p>
-            Comparison of heterogeneous task assignment results under different numbers of task types
+            Comparison of heterogeneous task assignment results under different numbers of task types.
+            Each subfigure illustrates the final task assignment for teams operating with \( |\tau| = 2,3,5 \), respectively.
           </p>
         </div>
         <div class="columns is-centered has-text-centered">
@@ -465,7 +464,7 @@
 
         <div class="content has-text-justified">
           <p>
-            Add New Tasks
+            - Case 1: Add New Tasks
           </p>
         </div>
         <div class="container is-max-desktop">
@@ -482,7 +481,7 @@
 
         <div class="content has-text-justified">
           <p>
-            New Obastacles Detected
+            - Case 2: New Obastacles Detected
           </p>
         </div>
         <div class="container is-max-desktop">
@@ -502,6 +501,8 @@
       </div>
     </div>
     <!--/ Animation. -->
+
+
 
 
     <!-- Concurrent Work. -->
@@ -534,7 +535,28 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Conclusion</h2>
+        <div class="content has-text-justified">
+          <p>
+            The <strong>OATH</strong> introduces an adaptive Halton sequence that dynamically adjusts sampling density based on obstacle distribution. 
+            In addition, the proposed hierarchical cluster–auction–task selection scheme generalizes to any number of task types and reduces allocation complexity while respecting robot capacity and capability constraints. 
+            Together, these components enable scalable and near-optimal task assignment for heterogeneous robot teams operating in obstacle-rich environments.
+          </p>
+          <p>
+            Beyond task assignment, <strong>OATH</strong> integrates LLMs as persistent interpreters throughout the execution phase.
+             Unlike prior approaches that employ LLMs only for initialization, our framework continuously leverages LLMs to translate natural language instructions into structured constraints and task updates. 
+             This design ensures ongoing adaptability to dynamic human intent, unforeseen obstacles, and mission changes.  
+          </p>  
 
+        </div>
+      </div>
+    </div>
+</section>
 <!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
