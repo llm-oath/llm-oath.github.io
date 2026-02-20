@@ -9,11 +9,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
@@ -21,117 +19,111 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
 <body>
 
-<!-- Hero / Title -->
-<section class="hero-banner">
-  <div class="container is-max-desktop">
-    <div class="hero-content has-text-centered">
-      <h1 class="paper-title">
-        Adaptive Obstacle-Aware Task Assignment and Planning for Heterogeneous Robot Teaming
-        <span class="paper-acronym">(OATH)</span>
-      </h1>
-      <div class="author-list">
-        <span class="author">Anonymous Authors</span>
-      </div>
-      <!-- <div class="author-list">
-        <span class="author">Nan Li<sup>1</sup>,</span>
-        <span class="author">Jiming Ren<sup>2</sup>,</span>
-        <span class="author">Haris Miller<sup>2</sup>,</span>
-        <span class="author">Samuel Coogan<sup>2</sup>,</span>
-        <span class="author">Karen M. Feigh<sup>2</sup>,</span>
-        <span class="author">Ye Zhao<sup>1,2</sup></span>
-      </div>
-      <div class="affiliation-list">
-        <span class="affiliation"><sup>1</sup>Institute for Robotics and Intelligent Machines (IRIM), Georgia Institute of Technology</span>
-        <span class="affiliation"><sup>2</sup>College of Computing, Georgia Institute of Technology</span>
-      </div> -->
-    </div>
+<!-- ====== HERO: Full-screen video background ====== -->
+<section class="hero-video-section">
+  <div class="hero-video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="./static/videos/Experiment2.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
   </div>
-</section>
-
-<!-- Overview Video -->
-<section class="section section-video-hero">
-  <div class="container is-max-desktop">
-    <div class="video-wrapper">
-      <video autoplay controls muted loop playsinline>
-        <source src="./static/videos/OATH_Overview.mp4" type="video/mp4">
-      </video>
-    </div>
-    <p class="video-caption">
-      <strong>Overview of OATH</strong> &mdash; a novel obstacle-aware multi-agent task assignment and planning framework.
+  <div class="hero-video-content">
+    <h1 class="hero-title">
+      Adaptive Obstacle-Aware Task Assignment and Planning<br>for Heterogeneous Robot Teaming
+    </h1>
+    <p class="hero-acronym">OATH</p>
+    <p class="hero-authors">Anonymous Authors</p>
+    <!-- <p class="hero-authors">
+      Nan Li<sup>1</sup>, Jiming Ren<sup>2</sup>, Haris Miller<sup>2</sup>,
+      Samuel Coogan<sup>2</sup>, Karen M. Feigh<sup>2</sup>, Ye Zhao<sup>1,2</sup>
     </p>
+    <p class="hero-affiliation">
+      <sup>1</sup>IRIM, Georgia Institute of Technology &nbsp;&middot;&nbsp;
+      <sup>2</sup>College of Computing, Georgia Institute of Technology
+    </p> -->
   </div>
 </section>
 
-<!-- Abstract -->
+<!-- ====== Overview Video ====== -->
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-10">
-        <h2 class="section-title">Abstract</h2>
-        <div class="abstract-text">
-          <p>
-            Multi-Agent Task Assignment and Planning (MATP) has attracted growing attention but remains challenging in terms of scalability, spatial reasoning, and adaptability in obstacle-rich environments.
-          </p>
-          <p>
-            To address these challenges, we propose <strong>OATH</strong> (Adaptive Obstacle-Aware Task Assignment and Planning for Heterogeneous Robot Teaming).
-            Our framework advances MATP by introducing two novel obstacle-aware strategies for task allocation. First, we develop an adaptive Halton sequence map&mdash;the first known application of Halton sampling with obstacle-aware adaptation in MATP&mdash;which adjusts sampling density based on obstacle distribution. Second, we integrate Dijkstra task-to-task distance matrices that encode traversability. Combined, these strategies significantly improve allocation quality in obstacle-rich environments.
-            For task assignment, we propose a cluster&ndash;auction&ndash;selection framework that integrates obstacle-aware clustering with weighted auctions and intra-cluster task selection. These mechanisms jointly enable effective coordination among heterogeneous robots while maintaining scalability and near-optimal allocation performance.
-            In addition, our framework leverages an LLM to interpret human instructions and directly guide the planner in real time.
-          </p>
-          <p>
-            We validate <strong>OATH</strong> in Isaac Sim, showing substantial improvements in task allocation quality, scalability, adaptability to dynamic changes, and overall execution performance compared to state-of-the-art MATP baselines.
-          </p>
-        </div>
+    <div class="content-column">
+      <div class="video-wrapper">
+        <video autoplay controls muted loop playsinline>
+          <source src="./static/videos/OATH_Overview.mp4" type="video/mp4">
+        </video>
       </div>
+      <p class="video-caption">
+        <strong>Overview of OATH</strong> &mdash; a novel obstacle-aware multi-agent task assignment and planning framework.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- Framework Overview -->
+<!-- ====== Abstract ====== -->
 <section class="section section-alt">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-10">
-        <h2 class="section-title">Framework Overview</h2>
-        <figure class="figure-block">
-          <img src="./static/images/new_framework_loop.png" alt="Overview of the OATH framework.">
-          <figcaption>Architecture of the OATH framework with adaptive obstacle-aware task allocation pipeline.</figcaption>
-        </figure>
+    <div class="content-column">
+      <h2 class="section-heading">Abstract</h2>
+      <div class="text-block">
+        <p>
+          Multi-Agent Task Assignment and Planning (MATP) has attracted growing attention but remains challenging in terms of scalability, spatial reasoning, and adaptability in obstacle-rich environments.
+        </p>
+        <p>
+          To address these challenges, we propose <strong>OATH</strong> (Adaptive Obstacle-Aware Task Assignment and Planning for Heterogeneous Robot Teaming).
+          Our framework advances MATP by introducing two novel obstacle-aware strategies for task allocation. First, we develop an adaptive Halton sequence map&mdash;the first known application of Halton sampling with obstacle-aware adaptation in MATP&mdash;which adjusts sampling density based on obstacle distribution. Second, we integrate Dijkstra task-to-task distance matrices that encode traversability. Combined, these strategies significantly improve allocation quality in obstacle-rich environments.
+          For task assignment, we propose a cluster&ndash;auction&ndash;selection framework that integrates obstacle-aware clustering with weighted auctions and intra-cluster task selection. These mechanisms jointly enable effective coordination among heterogeneous robots while maintaining scalability and near-optimal allocation performance.
+          In addition, our framework leverages an LLM to interpret human instructions and directly guide the planner in real time.
+        </p>
+        <p>
+          We validate <strong>OATH</strong> in Isaac Sim, showing substantial improvements in task allocation quality, scalability, adaptability to dynamic changes, and overall execution performance compared to state-of-the-art MATP baselines.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Results -->
+<!-- ====== Framework Overview ====== -->
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-10">
-        <h2 class="section-title">Obstacle-Aware Multi-Agent Pickup and Delivery</h2>
+    <div class="content-column">
+      <h2 class="section-heading">Framework Overview</h2>
+      <figure class="figure-block">
+        <img src="./static/images/new_framework_loop.png" alt="Overview of the OATH framework.">
+        <figcaption>Architecture of the OATH framework with adaptive obstacle-aware task allocation pipeline.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
-        <h3 class="subsection-title">Task Assignment Results</h3>
-        <p class="body-text">
-          Comparison of heterogeneous task assignment results under different numbers of task types.
-          Each subfigure illustrates the final task assignment for teams operating with 2, 3, or 5 task types, respectively.
-        </p>
-        <figure class="figure-block">
-          <img src="./static/images/heterogenous_comparison.png" alt="Heterogeneous task assignment comparison.">
-        </figure>
+<!-- ====== Hardware Experiments (PRIORITY) ====== -->
+<section class="section section-alt">
+  <div class="container is-max-desktop">
+    <div class="content-column">
+      <h2 class="section-heading">Hardware Experiments</h2>
+      <p class="text-body">
+        We validate the OATH framework on physical robot platforms to demonstrate real-world applicability.
+        The following videos show hardware experiments with heterogeneous robot teams executing obstacle-aware task assignments.
+      </p>
 
-        <h3 class="subsection-title">Simulation Visualization</h3>
-        <p class="body-text">
-          Simulation with two ground robots and two drones in Isaac Sim, where the ground robots handle both red and blue tasks while the drones only handle blue tasks.
-          The exclamation marks indicate the task locations.
-        </p>
+      <div class="hw-experiment">
+        <h3 class="subsection-heading">Multi-Robot Hardware Experiment</h3>
         <div class="video-wrapper">
           <video autoplay controls muted loop playsinline>
-            <source src="./static/videos/Isaac_Sim.mp4" type="video/mp4">
+            <source src="./static/videos/Experiment2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="hw-experiment">
+        <h3 class="subsection-heading">Hardware Experiment with LLM Integration</h3>
+        <div class="video-wrapper">
+          <video autoplay controls muted loop playsinline>
+            <source src="./static/videos/Hardware_experiment_with_LLM.mp4" type="video/mp4">
           </video>
         </div>
       </div>
@@ -139,143 +131,110 @@
   </div>
 </section>
 
-<!-- LLM Integration -->
-<section class="section section-alt">
+<!-- ====== Simulation Results ====== -->
+<section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-10">
-        <h3 class="subsection-title">LLM as the Translator of Different Contexts</h3>
-        <p class="body-text">
-          A fully integrated online pipeline with LLM-guided interaction for multi-robot systems.
-          It interprets natural language inputs and supports real-time replanning in response to human instructions.
-        </p>
-        <figure class="figure-block">
-          <img src="./static/images/LLM_structure.png" alt="LLM integration pipeline structure.">
-          <figcaption>LLM-guided interaction pipeline for real-time multi-robot replanning.</figcaption>
-        </figure>
+    <div class="content-column">
+      <h2 class="section-heading">Obstacle-Aware Multi-Agent Pickup and Delivery</h2>
+
+      <h3 class="subsection-heading">Task Assignment Results</h3>
+      <p class="text-body">
+        Comparison of heterogeneous task assignment results under different numbers of task types.
+        Each subfigure illustrates the final task assignment for teams operating with 2, 3, or 5 task types, respectively.
+      </p>
+      <figure class="figure-block">
+        <img src="./static/images/heterogenous_comparison.png" alt="Heterogeneous task assignment comparison.">
+      </figure>
+
+      <h3 class="subsection-heading">Simulation Visualization</h3>
+      <p class="text-body">
+        Simulation with two ground robots and two drones in Isaac Sim, where the ground robots handle both red and blue tasks while the drones only handle blue tasks.
+        The exclamation marks indicate the task locations.
+      </p>
+      <div class="video-wrapper">
+        <video autoplay controls muted loop playsinline>
+          <source src="./static/videos/Isaac_Sim.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>
 </section>
 
-<!-- LLM Case Studies -->
+<!-- ====== LLM Integration ====== -->
+<section class="section section-alt">
+  <div class="container is-max-desktop">
+    <div class="content-column">
+      <h2 class="section-heading">LLM as the Translator of Different Contexts</h2>
+      <p class="text-body">
+        A fully integrated online pipeline with LLM-guided interaction for multi-robot systems.
+        It interprets natural language inputs and supports real-time replanning in response to human instructions.
+      </p>
+      <figure class="figure-block">
+        <img src="./static/images/LLM_structure.png" alt="LLM integration pipeline structure.">
+        <figcaption>LLM-guided interaction pipeline for real-time multi-robot replanning.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ====== LLM Case Studies ====== -->
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-10">
-        <h3 class="subsection-title">LLM-Guided Replanning &mdash; Case Studies</h3>
+    <div class="content-column">
+      <h2 class="section-heading">LLM-Guided Replanning &mdash; Case Studies</h2>
 
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item">
-            <video poster="" autoplay controls muted loop playsinline>
+      <div class="case-studies">
+        <div class="case-card">
+          <h3 class="case-title">Case 1: Add New Tasks</h3>
+          <div class="video-wrapper">
+            <video autoplay controls muted loop playsinline>
               <source src="./static/videos/LLM-Tasks.mp4" type="video/mp4">
             </video>
-            <p class="carousel-caption">Case 1: Add New Tasks</p>
           </div>
-          <div class="item">
-            <video poster="" autoplay controls muted loop playsinline>
+        </div>
+        <div class="case-card">
+          <h3 class="case-title">Case 2: New Obstacles Detected</h3>
+          <div class="video-wrapper">
+            <video autoplay controls muted loop playsinline>
               <source src="./static/videos/LLM-obstacle.mp4" type="video/mp4">
             </video>
-            <p class="carousel-caption">Case 2: New Obstacles Detected</p>
           </div>
-          <div class="item">
-            <video poster="" autoplay controls muted loop playsinline>
+        </div>
+        <div class="case-card">
+          <h3 class="case-title">Case 3: Change Task Priority</h3>
+          <div class="video-wrapper">
+            <video autoplay controls muted loop playsinline>
               <source src="./static/videos/LLM-priority.mp4" type="video/mp4">
             </video>
-            <p class="carousel-caption">Case 3: Change Task Priority</p>
           </div>
         </div>
-
-        <div class="case-grid">
-          <div class="case-item">
-            <h4 class="case-label">Case 1: Add New Tasks</h4>
-            <div class="video-wrapper video-compact">
-              <video autoplay controls muted loop playsinline>
-                <source src="./static/videos/LLM-Tasks.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <div class="case-item">
-            <h4 class="case-label">Case 2: New Obstacles Detected</h4>
-            <div class="video-wrapper video-compact">
-              <video autoplay controls muted loop playsinline>
-                <source src="./static/videos/LLM-obstacle.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <div class="case-item">
-            <h4 class="case-label">Case 3: Change Task Priority</h4>
-            <div class="video-wrapper video-compact">
-              <video autoplay controls muted loop playsinline>
-                <source src="./static/videos/LLM-priority.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
 </section>
 
-<!-- Hardware Experiments -->
+<!-- ====== Conclusion ====== -->
 <section class="section section-alt">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-10">
-        <h2 class="section-title">Hardware Experiments</h2>
-        <p class="body-text">
-          We validate the OATH framework on physical robot platforms to demonstrate real-world applicability.
-          The following videos show hardware experiments with heterogeneous robot teams executing obstacle-aware task assignments.
+    <div class="content-column">
+      <h2 class="section-heading">Conclusion</h2>
+      <div class="text-block">
+        <p>
+          <strong>OATH</strong> introduces an adaptive Halton sequence that dynamically adjusts sampling density based on obstacle distribution.
+          In addition, the proposed hierarchical cluster&ndash;auction&ndash;task selection scheme generalizes to any number of task types and reduces allocation complexity while respecting robot capacity and capability constraints.
+          Together, these components enable scalable and near-optimal task assignment for heterogeneous robot teams operating in obstacle-rich environments.
         </p>
-
-        <div class="hardware-grid">
-          <div class="hardware-item">
-            <h4 class="case-label">Multi-Robot Hardware Experiment</h4>
-            <div class="video-wrapper">
-              <video autoplay controls muted loop playsinline>
-                <source src="./static/videos/Experiment2.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <div class="hardware-item">
-            <h4 class="case-label">Hardware Experiment with LLM Integration</h4>
-            <div class="video-wrapper">
-              <video autoplay controls muted loop playsinline>
-                <source src="./static/videos/Hardware_experiment_with_LLM.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
+        <p>
+          Beyond task assignment, <strong>OATH</strong> integrates LLMs as persistent interpreters throughout the execution phase.
+          Unlike prior approaches that employ LLMs only for initialization, our framework continuously leverages LLMs to translate natural language instructions into structured constraints and task updates.
+          This design ensures ongoing adaptability to dynamic human intent, unforeseen obstacles, and mission changes.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Conclusion -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-10">
-        <h2 class="section-title">Conclusion</h2>
-        <div class="abstract-text">
-          <p>
-            <strong>OATH</strong> introduces an adaptive Halton sequence that dynamically adjusts sampling density based on obstacle distribution.
-            In addition, the proposed hierarchical cluster&ndash;auction&ndash;task selection scheme generalizes to any number of task types and reduces allocation complexity while respecting robot capacity and capability constraints.
-            Together, these components enable scalable and near-optimal task assignment for heterogeneous robot teams operating in obstacle-rich environments.
-          </p>
-          <p>
-            Beyond task assignment, <strong>OATH</strong> integrates LLMs as persistent interpreters throughout the execution phase.
-            Unlike prior approaches that employ LLMs only for initialization, our framework continuously leverages LLMs to translate natural language instructions into structured constraints and task updates.
-            This design ensures ongoing adaptability to dynamic human intent, unforeseen obstacles, and mission changes.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
+<!-- ====== Footer ====== -->
 <footer class="site-footer">
   <div class="container">
     <div class="columns is-centered">

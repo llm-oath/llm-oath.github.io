@@ -1,25 +1,21 @@
-/* ===== Base & Typography ===== */
+/* ============================================
+   OATH Research Project — Academic Stylesheet
+   ============================================ */
 
 :root {
-  --color-heading: #1a1a2e;
+  --color-heading: #111827;
   --color-body: #374151;
   --color-muted: #6b7280;
-  --color-accent: #2563eb;
-  --color-accent-hover: #1d4ed8;
+  --color-accent: #1d4ed8;
+  --color-accent-light: #3b82f6;
   --color-bg: #ffffff;
-  --color-bg-alt: #f8f9fc;
+  --color-bg-alt: #f7f8fb;
   --color-border: #e5e7eb;
-  --color-caption: #6b7280;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-serif: 'Lora', 'Georgia', serif;
-  --max-width: 900px;
+  --font-display: 'Playfair Display', Georgia, serif;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
@@ -30,127 +26,159 @@ html {
 body {
   font-family: var(--font-sans);
   color: var(--color-body);
-  line-height: 1.7;
+  line-height: 1.75;
   background: var(--color-bg);
   margin: 0;
 }
 
-/* ===== Hero Banner ===== */
+/* ===== Content Column (consistent width) ===== */
 
-.hero-banner {
-  padding: 4rem 1.5rem 2.5rem;
-  background: linear-gradient(180deg, #f0f4ff 0%, var(--color-bg) 100%);
-}
-
-.hero-content {
-  max-width: var(--max-width);
+.content-column {
+  max-width: 860px;
   margin: 0 auto;
 }
 
-.paper-title {
-  font-family: var(--font-serif);
-  font-size: 2.2rem;
-  font-weight: 600;
-  line-height: 1.3;
-  color: var(--color-heading);
-  margin-bottom: 1.25rem;
-  letter-spacing: -0.01em;
+/* ==============================================
+   HERO — Full-viewport video background
+   ============================================== */
+
+.hero-video-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 540px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.paper-acronym {
-  color: var(--color-accent);
+.hero-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
-.author-list {
-  font-size: 1.1rem;
+.hero-video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.35) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+.hero-video-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  max-width: 960px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-acronym {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #93c5fd;
+  margin: 0 0 1.5rem;
+  text-transform: uppercase;
+}
+
+.hero-authors {
+  font-size: 1.15rem;
   font-weight: 400;
-  color: var(--color-body);
-  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 0.4rem;
 }
 
-.author {
-  display: inline-block;
-  margin: 0 0.15rem;
+.hero-affiliation {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
 }
 
-.author a {
-  color: var(--color-accent);
-  text-decoration: none;
-}
-
-.author a:hover {
-  text-decoration: underline;
-}
-
-.affiliation-list {
-  font-size: 0.92rem;
-  color: var(--color-muted);
-  margin-top: 0.5rem;
-}
-
-.affiliation {
-  display: inline-block;
-  margin: 0 0.75rem;
-}
-
-/* ===== Sections ===== */
+/* ==============================================
+   SECTIONS
+   ============================================== */
 
 .section {
-  padding: 3rem 1.5rem;
+  padding: 4rem 1.5rem;
 }
 
 .section-alt {
   background: var(--color-bg-alt);
 }
 
-.section-video-hero {
-  padding-top: 0;
-  padding-bottom: 2.5rem;
-}
+/* ===== Section Headings (h2) ===== */
 
-.section-title {
-  font-family: var(--font-serif);
-  font-size: 1.65rem;
-  font-weight: 600;
+.section-heading {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
   color: var(--color-heading);
-  margin-bottom: 1.25rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--color-accent);
-  display: inline-block;
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 3px solid var(--color-accent);
+  letter-spacing: -0.01em;
 }
 
-.subsection-title {
+/* ===== Subsection Headings (h3) ===== */
+
+.subsection-heading {
   font-family: var(--font-sans);
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.35rem;
+  font-weight: 700;
   color: var(--color-heading);
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
+  margin: 2.5rem 0 1rem;
 }
 
-/* ===== Body Text ===== */
+/* ==============================================
+   TEXT
+   ============================================== */
 
-.body-text,
-.abstract-text p {
-  font-size: 1rem;
-  line-height: 1.8;
+.text-block p,
+.text-body {
+  font-size: 1.05rem;
+  line-height: 1.85;
   color: var(--color-body);
   text-align: justify;
   hyphens: auto;
 }
 
-.abstract-text p + p {
-  margin-top: 1rem;
+.text-block p + p {
+  margin-top: 1.1rem;
 }
 
-.body-text {
+.text-body {
   margin-bottom: 1.25rem;
 }
 
-/* ===== Figures ===== */
+/* ==============================================
+   FIGURES
+   ============================================== */
 
 .figure-block {
-  margin: 1.5rem 0 2rem;
+  margin: 1.75rem 0 2.25rem;
   text-align: center;
 }
 
@@ -158,24 +186,26 @@ body {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
 }
 
 .figure-block figcaption {
-  font-size: 0.88rem;
-  color: var(--color-caption);
-  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-top: 0.85rem;
   font-style: italic;
   line-height: 1.5;
 }
 
-/* ===== Video Containers ===== */
+/* ==============================================
+   VIDEO CONTAINERS
+   ============================================== */
 
 .video-wrapper {
   position: relative;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
   background: #000;
   margin-bottom: 1rem;
 }
@@ -186,86 +216,62 @@ body {
   height: auto;
 }
 
-.video-compact {
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .video-caption {
   text-align: center;
-  font-size: 0.92rem;
-  color: var(--color-caption);
-  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  margin-top: 0.85rem;
   line-height: 1.5;
 }
 
-/* ===== Carousel ===== */
+/* ==============================================
+   HARDWARE EXPERIMENTS
+   ============================================== */
 
-.results-carousel {
-  overflow: hidden;
+.hw-experiment {
   margin-bottom: 2.5rem;
 }
 
-.results-carousel .item {
-  margin: 5px;
-  overflow: hidden;
-  border-radius: 8px;
+.hw-experiment:last-child {
+  margin-bottom: 0;
+}
+
+/* ==============================================
+   LLM CASE STUDIES — compact 3-column grid
+   ============================================== */
+
+.case-studies {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  margin-top: 1.5rem;
+}
+
+.case-card {
+  background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
-  background: #000;
-  font-size: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 1.25rem;
 }
 
-.results-carousel video {
-  margin: 0;
-  width: 100%;
-}
-
-.carousel-caption {
-  font-size: 0.88rem !important;
-  text-align: center;
-  padding: 0.6rem 0.5rem;
-  margin: 0;
-  background: var(--color-bg);
-  color: var(--color-body);
-  font-weight: 500;
-}
-
-/* ===== Case Study Grid ===== */
-
-.case-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-top: 1.5rem;
-}
-
-.case-item {
-  text-align: center;
-}
-
-.case-label {
+.case-title {
   font-family: var(--font-sans);
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  font-weight: 700;
   color: var(--color-heading);
-  margin-bottom: 0.75rem;
-}
-
-/* ===== Hardware Experiment Grid ===== */
-
-.hardware-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  margin-top: 1.5rem;
-}
-
-.hardware-item {
+  margin: 0 0 0.85rem;
   text-align: center;
 }
 
-/* ===== Footer ===== */
+.case-card .video-wrapper {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 0;
+}
+
+/* ==============================================
+   FOOTER
+   ============================================== */
 
 .site-footer {
   padding: 2rem 1.5rem;
@@ -288,44 +294,49 @@ body {
   text-decoration: underline;
 }
 
-/* ===== Responsive ===== */
+/* ==============================================
+   RESPONSIVE
+   ============================================== */
+
+@media screen and (min-width: 769px) {
+  .case-studies {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 
 @media screen and (max-width: 768px) {
-  .paper-title {
-    font-size: 1.6rem;
+  .hero-title {
+    font-size: 1.75rem;
   }
 
-  .section-title {
-    font-size: 1.35rem;
+  .hero-acronym {
+    font-size: 1.1rem;
   }
 
-  .hero-banner {
-    padding: 2.5rem 1rem 1.5rem;
+  .section-heading {
+    font-size: 1.5rem;
+  }
+
+  .subsection-heading {
+    font-size: 1.15rem;
   }
 
   .section {
-    padding: 2rem 1rem;
+    padding: 2.5rem 1rem;
+  }
+
+  .hero-video-section {
+    min-height: 400px;
+    height: 70vh;
   }
 }
 
-@media screen and (min-width: 769px) {
-  .case-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .hardware-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .video-compact {
-    max-width: 100%;
-  }
-}
-
-/* ===== Utility Overrides ===== */
+/* ==============================================
+   UTILITY OVERRIDES
+   ============================================== */
 
 strong {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-heading);
 }
 
@@ -335,9 +346,9 @@ a {
 }
 
 a:hover {
-  color: var(--color-accent-hover);
+  color: var(--color-accent-light);
 }
 
 ::selection {
-  background: rgba(37, 99, 235, 0.15);
+  background: rgba(29, 78, 216, 0.15);
 }
