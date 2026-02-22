@@ -312,7 +312,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   align-items: start;
-  max-width: 600px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
