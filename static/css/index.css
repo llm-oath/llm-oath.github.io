@@ -307,6 +307,23 @@ body {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.16);
 }
 
+.figure-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.figure-row .figure-block {
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .figure-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 .figure-block.figure-compact {
   max-width: 420px;
   margin-left: auto;

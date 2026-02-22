@@ -482,8 +482,40 @@
   </div>
 </section>
 
-<!-- ====== Conclusion ====== -->
+<!-- ====== LLM User Study ====== -->
 <section class="section section-alt">
+  <div class="container is-max-desktop">
+    <div class="content-column">
+      <h2 class="section-heading">LLM-Guided Instruction User Study</h2>
+      <p class="text-body">
+        In addition to evaluating intent parsing accuracy and system performance impact, we conduct a user study to quantify human-in-the-loop efficiency and analyze the latency of the LLM-guided pipeline.
+      </p>
+
+      <h3 class="subsection-heading">Study Design</h3>
+      <p class="text-body">
+        We recruit eight participants to evaluate the efficiency of human interventions. Each participant performs three trials for each intervention intention, resulting in 24 trials per intention. Participants are allowed to freely design their own instructions in each trial&mdash;they may introduce new tasks or new obstacles at arbitrary locations in the environment, without being restricted to predefined templates or fixed coordinates.
+      </p>
+      <p class="text-body">
+        To evaluate the efficiency and latency characteristics of the LLM-guided pipeline, we conduct two complementary experiments. The first experiment examines the overall human-in-the-loop interaction by measuring human formulation time and total system reaction time. The second experiment further decomposes the system reaction time into LLM inference time and planner update time, allowing us to analyze the source of latency under different intervention types.
+      </p>
+
+      <h3 class="subsection-heading">Results</h3>
+      <div class="figure-row">
+        <figure class="figure-block">
+          <img src="./static/images/LLM_experiment_results.png" alt="LLM user study experiment results.">
+          <figcaption>Human formulation time and total system reaction time across intervention types.</figcaption>
+        </figure>
+        <figure class="figure-block">
+          <img src="./static/images/LLM_System_time_analysis.png" alt="LLM system time analysis.">
+          <figcaption>Decomposition of system reaction time into LLM inference time and planner update time.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Conclusion ====== -->
+<section class="section">
   <div class="container is-max-desktop">
     <div class="content-column">
       <h2 class="section-heading">Conclusion</h2>
