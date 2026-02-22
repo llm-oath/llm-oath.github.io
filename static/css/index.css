@@ -213,8 +213,8 @@ body {
   display: block;
   width: 24px;
   height: 24px;
-  border-right: 2px solid rgba(255,255,255,0.7);
-  border-bottom: 2px solid rgba(255,255,255,0.7);
+  border-right: 2px solid rgba(255, 255, 255, 0.7);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.7);
   transform: rotate(45deg);
 }
 
@@ -430,6 +430,95 @@ body {
   height: 3px;
   background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
   border-radius: 2px;
+}
+
+/* ==============================================
+   ACADEMIC TABLES
+   ============================================== */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.25rem 0 2rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.academic-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.academic-table caption {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  font-style: italic;
+  text-align: left;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+  caption-side: bottom;
+  padding-top: 0.6rem;
+}
+
+.academic-table thead th {
+  background: #1e3a5f;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #16304d;
+  white-space: nowrap;
+  font-size: 0.88rem;
+  letter-spacing: 0.01em;
+}
+
+.academic-table thead th.table-group-header {
+  background: #2c5282;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.75rem 0.85rem;
+}
+
+.academic-table tbody td {
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--color-border);
+  color: var(--color-body);
+  transition: background-color 0.15s ease;
+}
+
+.academic-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.academic-table tbody tr:nth-child(odd) {
+  background: var(--color-bg);
+}
+
+.academic-table tbody tr:hover td {
+  background: #dbeafe;
+}
+
+.academic-table tbody tr.highlight-row td {
+  background: #eff6ff;
+  font-weight: 500;
+}
+
+.academic-table tbody tr.highlight-row:hover td {
+  background: #c7d9f5;
+}
+
+.academic-table td.best {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.academic-table td:first-child,
+.academic-table th:first-child {
+  text-align: left;
+  font-weight: 600;
 }
 
 /* ==============================================
