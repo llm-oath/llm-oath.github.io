@@ -308,12 +308,11 @@ body {
 }
 
 .figure-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  align-items: start;
-  max-width: 720px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .figure-row .figure-block {
