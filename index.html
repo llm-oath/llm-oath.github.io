@@ -27,7 +27,7 @@
 <section class="hero-video-section">
   <div class="hero-video-bg">
     <video autoplay muted loop playsinline>
-      <source src="./static/videos/Hardware Experiment.mp4" type="video/mp4">
+      <source src="./static/videos/bg_video.mp4" type="video/mp4">
     </video>
     <div class="hero-video-overlay"></div>
   </div>
@@ -47,9 +47,9 @@
   <div class="container is-max-desktop">
     <div class="paper-info-content">
       <h2 class="paper-info-title">
-        Adaptive <span class="accent">O</span>bstacle-<span class="accent">A</span>ware
+        <span class="accent">OATH</span>: Adaptive <span class="accent">O</span>bstacle-<span class="accent">A</span>ware
         <span class="accent">T</span>ask Assignment and Planning
-        for <span class="accent">H</span>eterogeneous Robot Teaming (OATH)
+        for <span class="accent">H</span>eterogeneous Robot Teaming
       </h2>
       <p class="paper-info-authors">Anonymous Authors</p>
       <!-- <p class="paper-info-authors">
@@ -70,7 +70,7 @@
     <div class="content-column">
       <div class="video-wrapper">
         <video autoplay controls muted loop playsinline>
-          <source src="./static/videos/OATH_Overview.mp4" type="video/mp4">
+          <source src="./static/videos/OATH.mp4" type="video/mp4">
         </video>
       </div>
       <p class="video-caption">
@@ -96,7 +96,7 @@
           In addition, our framework leverages an LLM to interpret human instructions and directly guide the planner in real time.
         </p>
         <p>
-          We validate <strong>OATH</strong> in Isaac Sim, showing substantial improvements in task allocation quality, scalability, adaptability to dynamic changes, and overall execution performance compared to state-of-the-art MATP baselines.
+          We validate <strong>OATH</strong> in both NVIDIA Isaac Sim and real-world hardware experiments using TurtleBot platforms, demonstrating substantial improvements in task assignment quality, scalability, adaptability to dynamic changes, and overall execution performance compared to state-of-the-art MATP baselines.
         </p>
       </div>
     </div>
@@ -116,36 +116,7 @@
   </div>
 </section>
 
-<!-- ====== Hardware Experiments (PRIORITY) ====== -->
-<section class="section section-alt">
-  <div class="container is-max-desktop">
-    <div class="content-column">
-      <h2 class="section-heading">Hardware Experiments</h2>
-      <p class="text-body">
-        We validate the OATH framework on physical robot platforms to demonstrate real-world applicability.
-        The following videos show hardware experiments with heterogeneous robot teams executing obstacle-aware task assignments.
-      </p>
 
-      <div class="hw-experiment">
-        <h3 class="subsection-heading">Multi-Robot Hardware Experiment</h3>
-        <div class="video-wrapper">
-          <video autoplay controls muted loop playsinline>
-            <source src="./static/videos/Hardware Experiment.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-
-      <div class="hw-experiment">
-        <h3 class="subsection-heading">Hardware Experiment with LLM Integration</h3>
-        <div class="video-wrapper">
-          <video autoplay controls muted loop playsinline>
-            <source src="./static/videos/Hardware_experiment_with_LLM.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ====== Simulation Results ====== -->
 <section class="section">
@@ -189,16 +160,8 @@
         <img src="./static/images/LLM_structure.png" alt="LLM integration pipeline structure.">
         <figcaption>LLM-guided interaction pipeline for real-time multi-robot replanning.</figcaption>
       </figure>
-    </div>
-  </div>
-</section>
 
-<!-- ====== LLM Case Studies ====== -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="content-column">
-      <h2 class="section-heading">LLM-Guided Replanning &mdash; Case Studies</h2>
-
+      <h3 class="subsection-heading">LLM-Guided Replanning &mdash; Case Studies</h3>
       <div class="case-studies">
         <div class="case-card">
           <h3 class="case-title">Case 1: Add New Tasks</h3>
@@ -225,6 +188,323 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Hardware Experiments (PRIORITY) ====== -->
+<section class="section section-alt">
+  <div class="container is-max-desktop">
+    <div class="content-column">
+      <h2 class="section-heading">Hardware Experiments</h2>
+      <p class="text-body">
+        We validate the OATH framework on physical robot platforms to demonstrate real-world applicability.
+        The following videos show hardware experiments with heterogeneous robot teams executing obstacle-aware task assignments.
+      </p>
+
+      <div class="hw-experiment">
+        <h3 class="subsection-heading">Multi-Robot Hardware Experiment</h3>
+        <div class="video-wrapper">
+          <video autoplay controls muted loop playsinline>
+            <source src="./static/videos/Hardware Experiment.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="hw-experiment">
+        <h3 class="subsection-heading">Hardware Experiment with LLM Integration</h3>
+        <div class="video-wrapper">
+          <video autoplay controls muted loop playsinline>
+            <source src="./static/videos/Hardware_experiment_with_LLM.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Quantitative Results ====== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="content-column">
+      <h2 class="section-heading">Quantitative Results</h2>
+
+      <p class="text-body">
+        We compare <strong>OATH</strong> against three baselines:
+        <strong>CBBA</strong> (consensus-based bundle algorithm),
+        <strong>KAN</strong> (<em>k</em>-means clustering + auction + nearest-neighbor heuristic with Euclidean distances), and
+        <strong>KAM</strong> (<em>k</em>-means clustering + auction + MILP-based intra-cluster solver with Dijkstra distances).
+        All variants share the same path planning algorithm.
+      </p>
+
+      <!-- Table 1: Method Comparison -->
+      <h3 class="subsection-heading">Method Overview</h3>
+      <div class="table-container">
+        <table class="academic-table">
+          <caption>Table 1. Comparison of methods evaluated. All variants use the same path planning algorithm.</caption>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Clustering</th>
+              <th>Intra-Cluster</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CBBA</td>
+              <td>Bundle</td>
+              <td>Bundle Order</td>
+            </tr>
+            <tr>
+              <td>KAN</td>
+              <td><em>k</em>-means</td>
+              <td>NN</td>
+            </tr>
+            <tr>
+              <td>KAM</td>
+              <td><em>k</em>-means</td>
+              <td>MILP</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>OATH (ours)</strong></td>
+              <td>Obstacle-Aware Cluster</td>
+              <td>MILP</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Table 2: Sensitivity -->
+      <h3 class="subsection-heading">Complexity Sensitivity Analysis</h3>
+      <div class="table-container">
+        <table class="academic-table">
+          <caption>Table 2. Complexity sensitivity of different allocators, defined as (T<sub>max</sub> &minus; T<sub>min</sub>) / &Delta;x. Lower values indicate better robustness to complexity growth.</caption>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Task Number (<em>P</em>)</th>
+              <th>Robot Number (<em>R</em>)</th>
+              <th>Capacity (<em>Q</em>)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CBBA</td>
+              <td class="best">0.003</td>
+              <td>0.035</td>
+              <td>0.296</td>
+            </tr>
+            <tr>
+              <td>KAN</td>
+              <td class="best">5.04E-05</td>
+              <td class="best">0.001</td>
+              <td class="best">0.001</td>
+            </tr>
+            <tr>
+              <td>KAM</td>
+              <td>0.028</td>
+              <td>0.261</td>
+              <td>0.797</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>OATH (ours)</strong></td>
+              <td>0.015</td>
+              <td class="best">0.010</td>
+              <td class="best">0.13</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Table 3: Total Steps & Running Time -->
+      <h3 class="subsection-heading">Total Steps &amp; Running Time</h3>
+      <div class="table-container">
+        <table class="academic-table">
+          <caption>Table 3. Total steps and total running time (s) vs. task number.</caption>
+          <thead>
+            <tr>
+              <th colspan="5" class="table-group-header">Total Steps</th>
+            </tr>
+            <tr>
+              <th>Tasks</th>
+              <th>CBBA</th>
+              <th>KAN</th>
+              <th>KAM</th>
+              <th>OATH</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10</td>
+              <td>314</td>
+              <td>332</td>
+              <td>330</td>
+              <td class="best"><strong>222</strong></td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>667</td>
+              <td>451</td>
+              <td>456</td>
+              <td class="best"><strong>351</strong></td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td>773</td>
+              <td>555</td>
+              <td>510</td>
+              <td class="best"><strong>463</strong></td>
+            </tr>
+            <tr>
+              <td>25</td>
+              <td>954</td>
+              <td>654</td>
+              <td>608</td>
+              <td class="best"><strong>562</strong></td>
+            </tr>
+            <tr>
+              <td>30</td>
+              <td>1031</td>
+              <td>820</td>
+              <td>802</td>
+              <td class="best"><strong>768</strong></td>
+            </tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th colspan="5" class="table-group-header">Total Running Time (s)</th>
+            </tr>
+            <tr>
+              <th>Tasks</th>
+              <th>CBBA</th>
+              <th>KAN</th>
+              <th>KAM</th>
+              <th>OATH</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10</td>
+              <td>68.53</td>
+              <td>54.79</td>
+              <td>54.60</td>
+              <td class="best"><strong>40.36</strong></td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>94.20</td>
+              <td>84.13</td>
+              <td>83.30</td>
+              <td class="best"><strong>60.11</strong></td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td>106.02</td>
+              <td>90.66</td>
+              <td>85.96</td>
+              <td class="best"><strong>76.98</strong></td>
+            </tr>
+            <tr>
+              <td>25</td>
+              <td>111.96</td>
+              <td>95.02</td>
+              <td>95.35</td>
+              <td class="best"><strong>94.76</strong></td>
+            </tr>
+            <tr>
+              <td>30</td>
+              <td>124.94</td>
+              <td>113.14</td>
+              <td>129.95</td>
+              <td class="best"><strong>103.63</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Figure: Experiment_4_method -->
+      <figure class="figure-block">
+        <img src="./static/images/Experiment_4_method.png" alt="Total running steps and time vs. task number.">
+        <figcaption>Figure 1. Total running steps (top) and total running time (bottom) of the four robots as a function of task number.</figcaption>
+      </figure>
+
+      <!-- Table 4: OATH vs. MILP -->
+      <h3 class="subsection-heading">Comparison with MILP Baseline</h3>
+      <div class="table-container">
+        <table class="academic-table">
+          <caption>Table 4. Comparison between OATH and the MILP baseline (Gurobi) in total execution distance and computation time.</caption>
+          <thead>
+            <tr>
+              <th rowspan="2">Tasks</th>
+              <th colspan="4">Total Distance</th>
+              <th colspan="2">Time (s)</th>
+            </tr>
+            <tr>
+              <th>OATH</th>
+              <th>MILP</th>
+              <th>Gap to MILP (%)</th>
+              <th>Gap to LB (%)</th>
+              <th>OATH</th>
+              <th>MILP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>9</td>
+              <td>88.108</td>
+              <td>67.043</td>
+              <td>23.91</td>
+              <td>0.00</td>
+              <td class="best"><strong>0.0716</strong></td>
+              <td>3.96</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>102.446</td>
+              <td>85.381</td>
+              <td>16.66</td>
+              <td>0.00</td>
+              <td class="best"><strong>0.0837</strong></td>
+              <td>32.94</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>125.051</td>
+              <td>108.226</td>
+              <td>13.45</td>
+              <td>6.07</td>
+              <td class="best"><strong>0.2011</strong></td>
+              <td>&ge;600</td>
+            </tr>
+            <tr>
+              <td>18</td>
+              <td>146.529</td>
+              <td>133.006</td>
+              <td>9.23</td>
+              <td>16.69</td>
+              <td class="best"><strong>0.3237</strong></td>
+              <td>&ge;600</td>
+            </tr>
+            <tr>
+              <td>21</td>
+              <td>208.357</td>
+              <td>155.572</td>
+              <td>25.33</td>
+              <td>22.12</td>
+              <td class="best"><strong>0.3663</strong></td>
+              <td>&ge;600</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Figure: Scalability -->
+      <h3 class="subsection-heading">Scalability</h3>
+      <figure class="figure-block">
+        <img src="./static/images/Scalability_Result.png" alt="Scalability of OATH with increasing task number.">
+        <figcaption>Figure 2. Scalability of OATH with respect to the number of tasks. With the team and planner fixed, increasing P from 25 to 100 yields approximately linear growth in total steps (left axis) and total time (right axis).</figcaption>
+      </figure>
+
     </div>
   </div>
 </section>
