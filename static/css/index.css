@@ -222,17 +222,6 @@ body {
   vertical-align: 0.08em;
 }
 
-.paper-info-authors a {
-  color: inherit;
-  border-bottom: 1px solid var(--color-border);
-  text-decoration: none;
-}
-
-.paper-info-authors a:hover {
-  color: var(--color-accent);
-  border-bottom-color: var(--color-accent);
-}
-
 .paper-links {
   display: flex;
   flex-wrap: wrap;
@@ -264,6 +253,32 @@ body {
 .paper-link-button .icon {
   display: inline-flex;
   font-size: 1.05em;
+}
+
+.contact-email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+}
+
+.contact-email a {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.contact-email a:hover {
+  border-bottom-color: var(--color-accent);
+}
+
+.contact-email .icon {
+  color: var(--color-muted);
+  font-size: 1em;
 }
 
 /* Scroll-down indicator */
